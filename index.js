@@ -14,19 +14,14 @@ function returnLastTwoDrivers(drivers){
 let selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
 
 
-function createFareMultiplier(fareprice) {
-    return () => {
-       return fareprice = fareprice * 4 + 5
-    }
+let createFareMultiplier = (multiply) =>  (fare) => {
+    return fare * multiply;
+    // console.log("first time calling this " + multiply)
+    // console.log("Once asign we pass fare " + fare)
+    // console.log("how many people on the bus " + people)
 }
-
-function fareDoubler(fareprice) {
-    return fareprice = fareprice * 2
-}
-
-function fareTripler(fareprice) {
-    return fareprice = fareprice * 3
-}
+let fareDoubler = createFareMultiplier(2)
+let fareTripler = createFareMultiplier(3)
 
 function selectDifferentDrivers(allDrivers,pickingDriver){
     return pickingDriver(allDrivers)
